@@ -1,0 +1,28 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1532 763" width="2014" height="1003">
+	<title>Rectangle 4-svg</title>
+	<defs>
+		<filter x="-50%" y="-50%" width="200%" height="200%" id="f1"> <feGaussianBlur stdDeviation="157"/> </filter>
+		<radialGradient id="g1" cx="775.5" cy="763" r="303" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#4baef5"/>
+			<stop offset="1" stop-color="#45a6ff" stop-opacity="0"/>
+		</radialGradient>
+		<radialGradient id="g2" cx="385.5" cy="304" r="303" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#f54b4b"/>
+			<stop offset="1" stop-color="#ff4545" stop-opacity="0"/>
+		</radialGradient>
+		<radialGradient id="g3" cx="1163.5" cy="292" r="303" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#f2f54b"/>
+			<stop offset="1" stop-color="#ffec45" stop-opacity="0"/>
+		</radialGradient>
+	</defs>
+	<style>
+		.s0 { filter: url(#f1);fill: url(#g1) } 
+		.s1 { filter: url(#f1);fill: url(#g2) } 
+		.s2 { filter: url(#f1);fill: url(#g3) } 
+	</style>
+	<path id="&lt;/Layer group&gt;" class="s0" d="m309 282h933v962h-933zm0 0h933v962h-933z"/>
+	<g id="Layer" style="opacity: .5">
+		<path id="Layer" class="s1" d="m-81-177h933v962h-933z"/>
+		<path id="Layer" class="s2" d="m697-189h933v962h-933z"/>
+	</g>
+</svg>

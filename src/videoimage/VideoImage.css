@@ -1,0 +1,36 @@
+.title-name {
+  font-family: "Prompt";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+}
+.image-width {
+  height: 374px;
+  width: 100%;
+  border: 1px solid #373b62;
+  border-radius: 10px 10px 0px 0px;
+  object-fit:cover;
+  margin-top: 30px;
+}
+
+@media screen and (max-width:1800px){
+  .title-name{
+    margin-top: 48px;
+    font-size: 27px;
+  }
+  .image-width{
+   width: 100%;
+  }
+  }
+
+  @media screen and (max-width:350px){
+    .title-name{
+      margin-top: 15px;
+      font-size: 15px;
+    }
+    .image-width{
+     width: 100%;
+     height: unset;
+    }
+    }

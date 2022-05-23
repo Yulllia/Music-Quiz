@@ -1,0 +1,77 @@
+input::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  opacity: 0.5;
+  text-align: center;
+}
+input[type="text"] {
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.logo-block {
+  display: flex;
+  justify-content: center;
+}
+.logo-title {
+  margin-top: 90px;
+}
+.form-block {
+  margin: 185px auto 298px auto;
+  display: flex;
+  justify-content: center;
+  max-width: 1100px;
+  min-height: 460px;
+  background-color: #1b1d31;
+}
+.form-element {
+  display: flex;
+  justify-content: column;
+}
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 90px 0px;
+}
+.form-title {
+  font-family: "Prompt";
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 45px;
+  color: #ffffff;
+}
+.label-text {
+  margin-top: 10px;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  opacity: 0.7;
+}
+.input-block {
+  width: 455px;
+  height: 41px;
+  background: none;
+  margin-top: 90px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  border-bottom: 1px solid #373b62;
+  cursor: pointer;
+}
+
+.input-block:hover,
+.input-block:focus {
+  cursor: pointer;
+  border-bottom: 1px solid #ffffff;
+}
+.button-start {
+  width: 165.78px;
+  margin-top: 30px;
+}

@@ -1,0 +1,186 @@
+.player-lister {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+  height: 154px;
+  background: #373b62;
+  border: 1px solid #373b62;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+.player-lister > button {
+  border-radius: 40px;
+  border: none;
+}
+.back-gradient {
+  width: 163px;
+  height: 114px;
+  border-radius: 5px;
+  background: linear-gradient(
+    148.42deg,
+    #ec1919 -0.53%,
+    #d1c234 28.02%,
+    #d134a5 60.47%,
+    #3734d1 90.32%,
+    #23b632 124.06%
+  );
+}
+.back-gradient-true{
+  min-width: 114px;
+  height: 114px;
+  border-radius: 5px;
+}
+.remove-item {
+  display: none;
+}
+.player-image {
+  height: 87px;
+}
+.arrow-image {
+  margin: 0;
+}
+.input-image {
+  margin: 19px auto;
+}
+
+/* Background */
+.progress-bar-cover {
+  background: linear-gradient(270deg, #7e55b3 0%, #a769c4 100.02%);
+  width: 0%;
+  height: 5px;
+  display: block;
+  position: absolute;
+  border-radius: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+.slider-container {
+  --progress-bar-height: 4px;
+}
+
+.slider-container {
+  width: 100%;  position: relative;
+
+}
+
+/* Background */
+.slider-container::before {
+  content: "";
+  background-color: white;
+  width: 99%;
+  height: calc(var(--progress-bar-height) - 1px);
+  display: block;
+  position: absolute;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Custom Progress Bar */
+.progress-bar-cover {
+  background-color: rgb(218, 55, 145);
+  width: 0%;
+  height: var(--progress-bar-height);
+  display: block;
+  position: absolute;
+  border-radius: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+/*  Hide Original */
+.range {
+  -webkit-appearance: none;
+  background-color: rgba(240, 9, 9, 0.397);
+  height: 10px;
+  width: 100%;
+  cursor: pointer;
+  opacity: 0;
+  margin: 0 auto;
+}
+.progressBar {
+  --bar-bg: #ffe3d4;
+  appearance: none;
+  background: var(--bar-bg);
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 11px;
+  outline: none;
+}
+
+.progressBar::before {
+  content: "";
+  height: 11px;
+  width: var(--seek-before-width);
+  background-color: var(--seek-before-color);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+.slider-container {
+  --thumb-width: 9px;
+  --thumb-height: 9px;
+}
+
+.range::-webkit-slider-thumb {
+  width: var(--thumb-width);
+  height: var(--thumb-height);
+
+  background: #350f2d;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.thumb {
+  width: var(--thumb-width);
+  height: var(--thumb-height);
+  z-index: 3;
+  background: #ffffff;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  pointer-events: none; /* Remove pointer events on thumb so user can click on the actual thumb beaneath it!  */
+  user-select: none; /*  Prevent Accidentally highlighting the number while sliding the cursor  */
+}
+@media screen and (max-width:1800px){
+  .player-lister .player-lister {
+    width: 97%;
+  }
+  .player-lister .player-image{
+    width: 100%;
+  }
+  .player-lister.player-lister .slider-container{
+   margin-top: 52px
+  }
+  }
+  @media screen and (max-width:806px){
+    .player-lister.player-lister .slider-container{
+      margin-top: 13px
+     }
+  }
+  @media screen and (max-width:500px){
+    .player-lister.player-lister .slider-container{
+      margin-top: 45px
+     }
+  }
+
+
+
