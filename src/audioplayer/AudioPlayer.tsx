@@ -2,6 +2,8 @@ import { useState, useEffect, useRef, ChangeEvent } from "react";
 import { FaPlay } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
 import "./AudioPlayer.css";
+import { styled } from "@mui/material/styles";
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 
 function AudioPlayer(props: {
   audio: string;
@@ -18,11 +20,9 @@ function AudioPlayer(props: {
   let imageBack;
   const audioPlayer = useRef<HTMLAudioElement>(null);
   const currentDuration = useRef<HTMLInputElement>(null);
-
-  const [position, setPosition] = useState(0);
-  const [marginLeft, setMarginLeft] = useState(0);
-  const [progressBarWidth, setProgressBarWidth] = useState(0);
-
+  const [position, setPosition] = useState<number>(0);
+  const [progressBarWidth, setProgressBarWidth] = useState<number>(0);
+  const [marginLeft, setMarginLeft] = useState<number>(0);
   const thumbClick = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -37,8 +37,7 @@ function AudioPlayer(props: {
     setPosition(percentege);
     setMarginLeft(centerThumb);
     setProgressBarWidth(centerProgressBar);
-
-  }, [percentege]);
+  }, [percentege, props.checkedState]);
 
   function togglePlayPause() {
     setIsPlaying(!isPlaying);
@@ -48,6 +47,20 @@ function AudioPlayer(props: {
       audioPlayer.current?.pause();
     }
   }
+  const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
+    <Tooltip {...props} placement="top" classes={{ popper: className }} />
+  ))(({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: "#373B62;",
+      color: "white",
+      maxWidth: 100,
+      fontSize: "12px",
+      borderRadius: "5px",
+      left: `${position}%`,
+      marginLeft: `${marginLeft}px`,
+    },
+  }));
+
   const getCurrDuration = (e: {
     currentTarget: { currentTime: number; duration: number };
   }) => {
@@ -69,15 +82,18 @@ function AudioPlayer(props: {
     const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
     return `${returnedMinutes} : ${returnedSeconds}`;
   };
-  if(props.image && props.id===undefined){
-    imageBack =  {
+  if (props.image && props.id === undefined) {
+    imageBack = {
       backgroundImage: `url(https://levi9-song-quiz.herokuapp.com/api/${props.image})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
-    }
+    };
   }
-
-
+  function onChange(e: ChangeEvent<HTMLInputElement>): void {
+    const audio = audioPlayer.current;
+    audio!.currentTime = (audio!.duration / 100) * Number(e.target.value);
+    setPercentege(Number(e.target.value));
+  }
   return (
     <>
       <div
@@ -121,7 +137,7 @@ function AudioPlayer(props: {
             {isPlaying ? <FaPlay /> : <FaPause />}
           </button>
         </div>
-        <div className="slider-container">
+        <div className="slider-container" onChange={onChange}>
           <div
             className={`range-input ${
               props.id === undefined ? "range-input" : "input-image"
@@ -134,14 +150,16 @@ function AudioPlayer(props: {
                 width: `${progressBarWidth}px`,
               }}
             ></div>
-            <div
-              ref={thumbClick}
-              className="thumb"
-              style={{
-                left: `${position}%`,
-                marginLeft: `${marginLeft}px`,
-              }}
-            ></div>
+            <HtmlTooltip title={time && !isNaN(+time) && calculateTime(+time)}>
+              <div
+                ref={thumbClick}
+                className="thumb"
+                style={{
+                  left: `${position}%`,
+                  marginLeft: `${marginLeft}px`,
+                }}
+              ></div>
+            </HtmlTooltip>
             <input
               type="range"
               step="0.01"

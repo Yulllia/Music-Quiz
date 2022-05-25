@@ -36,6 +36,8 @@ function QuizPage() {
     new Array(movieGenre.length).fill(false)
   );
   const [image, setImage] = useState<string | undefined>();
+
+
   useEffect(() => {
     function getRandomInt(max: number) {
       return Math.floor(Math.random() * movieGenre.length);

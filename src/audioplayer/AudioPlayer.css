@@ -27,7 +27,7 @@
     #23b632 124.06%
   );
 }
-.back-gradient-true{
+.back-gradient-true {
   min-width: 114px;
   height: 114px;
   border-radius: 5px;
@@ -65,8 +65,10 @@
 }
 
 .slider-container {
-  width: 100%;  position: relative;
-
+  width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* Background */
@@ -109,30 +111,6 @@
   opacity: 0;
   margin: 0 auto;
 }
-.progressBar {
-  --bar-bg: #ffe3d4;
-  appearance: none;
-  background: var(--bar-bg);
-  border-radius: 10px;
-  position: relative;
-  width: 100%;
-  height: 11px;
-  outline: none;
-}
-
-.progressBar::before {
-  content: "";
-  height: 11px;
-  width: var(--seek-before-width);
-  background-color: var(--seek-before-color);
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  cursor: pointer;
-}
 .slider-container {
   --thumb-width: 9px;
   --thumb-height: 9px;
@@ -141,9 +119,9 @@
 .range::-webkit-slider-thumb {
   width: var(--thumb-width);
   height: var(--thumb-height);
-
   background: #350f2d;
   border-radius: 50%;
+  height: 9px;
   cursor: pointer;
   -webkit-appearance: none;
 }
@@ -160,27 +138,27 @@
   pointer-events: none; /* Remove pointer events on thumb so user can click on the actual thumb beaneath it!  */
   user-select: none; /*  Prevent Accidentally highlighting the number while sliding the cursor  */
 }
-@media screen and (max-width:1800px){
+.thumb:hover {
+  width: 21px;
+  height: 21px;
+  background: #ffffff;
+  border: 4px solid #373b62;
+}
+@media screen and (max-width: 1800px) {
   .player-lister .player-lister {
     width: 97%;
   }
-  .player-lister .player-image{
+  .player-lister .player-image {
     width: 100%;
   }
-  .player-lister.player-lister .slider-container{
-   margin-top: 52px
+}
+@media screen and (max-width: 806px) {
+  .player-lister.player-lister .slider-container {
+    margin-top: 0px;
   }
+}
+@media screen and (max-width: 500px) {
+  .player-lister.player-lister .slider-container {
+    margin-top: 0px;
   }
-  @media screen and (max-width:806px){
-    .player-lister.player-lister .slider-container{
-      margin-top: 13px
-     }
-  }
-  @media screen and (max-width:500px){
-    .player-lister.player-lister .slider-container{
-      margin-top: 45px
-     }
-  }
-
-
-
+}

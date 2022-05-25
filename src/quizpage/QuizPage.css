@@ -211,9 +211,6 @@
   display: flex;
   flex-direction: column;
 }
-.video-image {
-  margin-right: 60px;
-}
 .description {
   font-family: "Arial";
   font-weight: 400;
@@ -226,6 +223,7 @@
 }
 .video-item {
   width: 1000px;
+  margin-right: 60px;
 }
 .form-block-finish {
   display: flex;
@@ -287,18 +285,20 @@
   }
   .text-quiz {
     width: 100%;
-    margin-right: 60px;
   }
   .video-item {
     margin: 0;
     width: auto;
     padding-bottom: 30px;
   }
+  .video-image {
+    margin-right: 0px;
+  }
 }
 
 @media screen and (max-width: 1755px) {
   .quiz-main {
-    max-width: 90%;
+    max-width: 100%;
   }
   .quiz-layot {
     width: 90%;
@@ -335,9 +335,6 @@
   }
 }
 @media screen and (max-width: 450px) {
-  .text-quiz {
-    width: 95%;
-  }
   .quiz-block > .genre-title {
     padding: 15px 0 0 0;
   }

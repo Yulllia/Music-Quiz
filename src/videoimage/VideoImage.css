@@ -10,27 +10,29 @@
   width: 100%;
   border: 1px solid #373b62;
   border-radius: 10px 10px 0px 0px;
-  object-fit:cover;
+  object-fit: cover;
   margin-top: 30px;
 }
 
-@media screen and (max-width:1800px){
-  .title-name{
+@media screen and (max-width: 1800px) {
+  .title-name {
     margin-top: 48px;
     font-size: 27px;
   }
-  .image-width{
-   width: 100%;
+  .image-width {
+    width: 100%;
   }
+}
+@media screen and (max-width: 800px) {
+  .image-width {
+    width: 100%;
+    height: unset;
   }
+}
 
-  @media screen and (max-width:350px){
-    .title-name{
-      margin-top: 15px;
-      font-size: 15px;
-    }
-    .image-width{
-     width: 100%;
-     height: unset;
-    }
-    }
+@media screen and (max-width: 350px) {
+  .title-name {
+    margin-top: 35px;
+    font-size: 15px;
+  }
+}

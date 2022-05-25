@@ -49,8 +49,6 @@ describe("Mainpage testing", () => {
     (screen.getAllByTestId("input-field").map(el=>fireEvent.click(el)));
     expect(gradient).toHaveClass("progress-bar-full");
     expect(screen.getAllByTestId("button-content")[0]).toHaveTextContent("see my score")
-    // fireEvent.click(screen.getAllByTestId("button-content")[0])
-    // expect(screen.getByTestId("link-to-finish-page")).toBeInTheDocument()
   });
 
   test("check if finish page is started on Page 3", async () => {

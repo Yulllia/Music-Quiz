@@ -68,7 +68,6 @@ function NextPage(props: {
     }
     props.setValue(props.value + 3);
     const result = new Array(props.movieGenre.length).fill(false);
-
     props.genreId === 0 &&
       props.setGradient(["progress-bar-next progress-bar-next::before"]);
     props.genreId === 2 &&
