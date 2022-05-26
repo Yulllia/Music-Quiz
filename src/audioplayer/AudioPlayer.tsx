@@ -20,21 +20,16 @@ function AudioPlayer(props: {
   let imageBack;
   const audioPlayer = useRef<HTMLAudioElement>(null);
   const currentDuration = useRef<HTMLInputElement>(null);
-  const [position, setPosition] = useState<number>(0);
   const [progressBarWidth, setProgressBarWidth] = useState<number>(0);
   const [marginLeft, setMarginLeft] = useState<number>(0);
   const thumbClick = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!currentDuration.current) return;
-    const rangeWidth = currentDuration.current!.getBoundingClientRect().width;
     const thumbWidth = thumbClick.current!.getBoundingClientRect().width;
     const centerThumb = (thumbWidth / 100) * percentege * -1;
     const centerProgressBar =
-      thumbWidth +
-      (rangeWidth / 100) * percentege -
-      (thumbWidth / 100) * percentege;
-    setPosition(percentege);
+      thumbWidth + (100 / 100) * percentege - (thumbWidth / 100) * percentege;
     setMarginLeft(centerThumb);
     setProgressBarWidth(centerProgressBar);
   }, [percentege, props.checkedState]);
@@ -51,12 +46,12 @@ function AudioPlayer(props: {
     <Tooltip {...props} placement="top" classes={{ popper: className }} />
   ))(({ theme }) => ({
     [`& .${tooltipClasses.tooltip}`]: {
-      backgroundColor: "#373B62;",
+      backgroundColor: "#494D77",
       color: "white",
       maxWidth: 100,
       fontSize: "12px",
       borderRadius: "5px",
-      left: `${position}%`,
+      marginBottom:"0px",
       marginLeft: `${marginLeft}px`,
     },
   }));
@@ -77,7 +72,7 @@ function AudioPlayer(props: {
       return `00 : 00`;
     }
     const minutes = Math.floor(sec / 60);
-    const returnedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+    const returnedMinutes = minutes < 10 ? `${minutes}` : `${minutes}`;
     const seconds = Math.floor(sec % 60);
     const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
     return `${returnedMinutes} : ${returnedSeconds}`;
@@ -147,7 +142,7 @@ function AudioPlayer(props: {
               className="progress-bar-cover"
               data-testid="progress-width"
               style={{
-                width: `${progressBarWidth}px`,
+                width: `${progressBarWidth}%`,
               }}
             ></div>
             <HtmlTooltip title={time && !isNaN(+time) && calculateTime(+time)}>
@@ -155,7 +150,7 @@ function AudioPlayer(props: {
                 ref={thumbClick}
                 className="thumb"
                 style={{
-                  left: `${position}%`,
+                  left: `${progressBarWidth}%`,
                   marginLeft: `${marginLeft}px`,
                 }}
               ></div>
@@ -166,6 +161,7 @@ function AudioPlayer(props: {
               className="range"
               ref={currentDuration}
             />
+
             <div className="time-block">
               <div className="duration-time">
                 {time && !isNaN(+time) && calculateTime(+time)}

@@ -122,7 +122,7 @@ html {
 .time-block {
   display: flex;
   justify-content: space-between;
-  padding-top: 5px;
+  padding-top: 8px;
 }
 .loadingSpinnerContainer {
   position: fixed;
