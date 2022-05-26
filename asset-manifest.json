@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.aa8ef13c.css",
-    "main.js": "/static/js/main.ea85a84d.js",
-    "static/js/787.fe14a8f9.chunk.js": "/static/js/787.fe14a8f9.chunk.js",
-    "static/media/backround-main-small.png": "/static/media/backround-main-small.efe0ed2ac94fcbf2633e.png",
-    "static/media/finishpage.svg": "/static/media/finishpage.7b9facfedfa01069e24c.svg",
-    "static/media/backround-main.svg": "/static/media/backround-main.83b3afe0d47c537e8346.svg",
-    "static/media/Union.svg": "/static/media/Union.1a6a2d8bfc50d00e2a00.svg",
-    "index.html": "/index.html",
-    "main.aa8ef13c.css.map": "/static/css/main.aa8ef13c.css.map",
-    "main.ea85a84d.js.map": "/static/js/main.ea85a84d.js.map",
-    "787.fe14a8f9.chunk.js.map": "/static/js/787.fe14a8f9.chunk.js.map"
+    "main.css": "/music-quiz/static/css/main.8dd9440d.css",
+    "main.js": "/music-quiz/static/js/main.b28b16cc.js",
+    "static/js/787.fe14a8f9.chunk.js": "/music-quiz/static/js/787.fe14a8f9.chunk.js",
+    "static/media/backround-main-small.png": "/music-quiz/static/media/backround-main-small.efe0ed2ac94fcbf2633e.png",
+    "static/media/finishpage.svg": "/music-quiz/static/media/finishpage.7b9facfedfa01069e24c.svg",
+    "static/media/backround-main.svg": "/music-quiz/static/media/backround-main.83b3afe0d47c537e8346.svg",
+    "index.html": "/music-quiz/index.html",
+    "static/media/Union.svg": "/music-quiz/static/media/Union.1a6a2d8bfc50d00e2a00.svg",
+    "main.8dd9440d.css.map": "/music-quiz/static/css/main.8dd9440d.css.map",
+    "main.b28b16cc.js.map": "/music-quiz/static/js/main.b28b16cc.js.map",
+    "787.fe14a8f9.chunk.js.map": "/music-quiz/static/js/787.fe14a8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa8ef13c.css",
-    "static/js/main.ea85a84d.js"
+    "static/css/main.8dd9440d.css",
+    "static/js/main.b28b16cc.js"
   ]
 }
